@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
     <style>
-    	body {
-            background-image: url(
-'https://rarepurple.github.io/rpweb/rpLogo.png');
-            background-size: cover;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url('https://rarepurple.github.io/rpweb/rpLogo.png');
             background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Optional: Add content container */
+        .content {
+            padding: 20px;
+            /* Add more styling for your content here */
         }
     </style>
 </head>
-
 <body>
-<h1>Welcome</h1>
+    <div class="content">
+        <!-- Your content goes here -->
+    </div>
 </body>
-
 </html>
