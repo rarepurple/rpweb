@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>RP Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./rpLogo.png">
+    <link rel="apple-touch-icon" href="./rpLogo.png">
+    
     <style>
         * {
             margin: 0;
@@ -14,12 +19,12 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden;  /* Prevents scrolling */
+            overflow: hidden;
         }
 
         body {
             position: relative;
-            background-color: #000;  /* Background color behind image */
+            background-color: #000;
         }
 
         .bg-container {
@@ -47,17 +52,28 @@
         .content {
             position: relative;
             z-index: 1;
-            color: white;  /* Adjust text color as needed */
+            color: white;
             padding: 20px;
+            text-align: center;
+        }
+
+        /* Optional: Add a title style */
+        .page-title {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="bg-container">
-        <img src="./rpLogo.png" alt="Background" class="bg-image">
+        <img src="./rpLogo.png" alt="RP Logo" class="bg-image">
     </div>
     <div class="content">
-        <!-- Your content goes here -->
+        <h1 class="page-title">Welcome to RP Portfolio</h1>
+        <!-- Add any additional content here -->
     </div>
 </body>
 </html>
