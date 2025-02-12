@@ -11,36 +11,51 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;  /* Prevents scrolling */
+        }
+
         body {
-            min-height: 100vh;
-            background-image: url('https://rarepurple.github.io/rpweb/rpLogo.png');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: contain;  /* Changed from 'cover' to 'contain' */
-            background-color: #000;    /* Optional: background color behind image */
-            background-attachment: fixed;
-            
-            /* Added these properties for better image handling */
+            position: relative;
+            background-color: #000;  /* Background color behind image */
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
 
-        /* Optional: Add content container */
+        .bg-image {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         .content {
+            position: relative;
+            z-index: 1;
+            color: white;  /* Adjust text color as needed */
             padding: 20px;
-            color: white;     /* Adjust text color as needed */
-        }
-
-        /* Media query for different screen sizes */
-        @media (max-width: 768px) {
-            body {
-                background-size: auto 100%;  /* Adjusts image for mobile */
-            }
         }
     </style>
 </head>
 <body>
+    <div class="bg-container">
+        <img src="./rpLogo.png" alt="Background" class="bg-image">
+    </div>
     <div class="content">
         <!-- Your content goes here -->
     </div>
