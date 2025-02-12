@@ -14,16 +14,29 @@
         body {
             min-height: 100vh;
             background-image: url('https://rarepurple.github.io/rpweb/rpLogo.png');
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;  /* Changed from 'cover' to 'contain' */
+            background-color: #000;    /* Optional: background color behind image */
             background-attachment: fixed;
+            
+            /* Added these properties for better image handling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Optional: Add content container */
         .content {
             padding: 20px;
-            /* Add more styling for your content here */
+            color: white;     /* Adjust text color as needed */
+        }
+
+        /* Media query for different screen sizes */
+        @media (max-width: 768px) {
+            body {
+                background-size: auto 100%;  /* Adjusts image for mobile */
+            }
         }
     </style>
 </head>
