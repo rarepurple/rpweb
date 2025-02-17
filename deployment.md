@@ -1,50 +1,49 @@
-rpweb/
-├── assets/
-│   └── Company_logo.png           # Copy from attached_assets/Company_logo.png
-├── src/
-│   ├── config/
-│   │   └── site.ts               # Configuration file
-│   ├── components/
-│   │   ├── ui/                   # Copy all UI components
-│   │   └── layout/
-│   │       ├── Navigation.tsx
-│   │       ├── Hero.tsx
-│   │       ├── Products.tsx
-│   │       ├── Benefits.tsx
-│   │       ├── SocialProof.tsx
-│   │       ├── Contact.tsx
-│   │       ├── Newsletter.tsx
-│   │       └── Footer.tsx
-│   ├── lib/
-│   │   ├── animations.ts
-│   │   └── queryClient.ts
-│   ├── pages/
-│   │   ├── Home.tsx
-│   │   └── not-found.tsx
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
-├── index.html
-├── theme.json
-├── package.json
-├── postcss.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-├── vite.config.ts
-├── .gitignore
-└── README.md
+2. Copy the contents:
+- Extract the downloaded rpweb folder
+- Copy all files and folders from INSIDE the rpweb folder into your repository's root directory
+- Do not copy the rpweb folder itself
 
-## Deployment Steps
+3. Configure GitHub Pages:
+- Go to your repository settings on GitHub
+- Navigate to "Pages" in the sidebar
+- Under "Source", select your main branch
+- Set the root directory (/) as your publishing source
+- Save the settings
 
-1. Clone your repository:
+4. Create necessary files:
 ```bash
-git clone https://github.com/yourusername/rpweb.git
-cd rpweb
+# Create .nojekyll file to prevent GitHub Pages from ignoring files that begin with an underscore
+touch .nojekyll
+
+# Set the base URL for GitHub Pages in your environment
+echo "VITE_BASE_URL=/<your-repo-name>" > .env
+
+# Create or update vite.config.ts to use the base URL
+cat > vite.config.ts << EOL
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig({
+  base: process.env.VITE_BASE_URL || '/',
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@shared': path.resolve(__dirname, './shared')
+    }
+  }
+});
+EOL
 ```
 
-2. Copy all the files maintaining the structure shown above
+5. Install dependencies and build:
+```bash
+npm install
+npm run build
+```
 
-3. Initialize and push to GitHub:
+6. Add and commit your files:
 ```bash
 git add .
 git commit -m "Initial website setup"
