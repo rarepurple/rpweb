@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Purple</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./rpLogo.png">
+    <link rel="apple-touch-icon" href="./rpLogo.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            position: relative;
+            background-color: #000;
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Optional: Add a title style */
+        .page-title {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container">
+        <img src="./rpLogo.png" alt="RP Logo" class="bg-image">
+    </div>
+    <div class="content">
+        <!-- Add any additional content here -->
+    </div>
+</body>
+</html>
